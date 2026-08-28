@@ -61,9 +61,9 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
 .subtitle { font-size: 1.15rem; font-weight: 500; max-width: 55ch; margin: 0 0 1em; }
 .intro { font-weight: 500; margin-bottom: 1.2em; }
 .tagline {
-  font-family: var(--font-titre);
+  font-family: var(--font-texte);
   color: var(--c-accent);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.1rem;
   margin: 0 0 0.5em;
 }
@@ -103,6 +103,7 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
+  text-align: center;
   padding: 14px 26px;
   border-radius: var(--radius);
   border: none;
@@ -120,8 +121,8 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
 
 /* Bouton "Le déclic, c'est maintenant" : libellé au-dessus, bouton orange clair, centré dans la colonne de texte */
 .cta-block { max-width: 60ch; text-align: center; margin-top: 1.5rem; }
-.cta-label { font-weight: 400; margin: 0 0 0.7em; }
-.cta-orange { background: var(--c-accent-clair); color: var(--c-nuit); }
+.cta-label { font-weight: 400; margin: 0 0 0.3em; }
+.cta-orange { background: var(--c-accent-clair); color: var(--c-nuit); font-weight: 700; }
 .cta-orange:hover { background: var(--c-accent); }
 
 /* Bouton "Réserve ton appel découverte" : texte principal + sous-texte empilés */
@@ -138,7 +139,7 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  background: transparent;
+  background: var(--c-nuit);
   transition: background-color 0.35s ease;
 }
 .site-header.scrolled {
@@ -189,7 +190,7 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
 /* ---------- Hero ---------- */
 .hero {
   padding-top: 3.5rem;
-  background-image: linear-gradient(rgba(30, 10, 46, 0.68), rgba(30, 10, 46, 0.68)), url('assets/images/hero-bg.webp');
+  background-image: linear-gradient(rgba(30, 10, 46, 0.34), rgba(30, 10, 46, 0.34)), url('assets/images/hero-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -224,9 +225,9 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
   content: "";
   position: absolute;
   left: 0;
-  top: 0.5em;
-  width: 12px;
-  height: 12px;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--c-highlight);
 }
