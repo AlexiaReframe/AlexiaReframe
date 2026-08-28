@@ -1,0 +1,340 @@
+/* ====================================================================
+   ALEXIA REFRAME — style.css
+   Palette, typographie et comportements définis dans la charte graphique.
+   Mobile-first : styles de base = mobile (<600px), puis tablette (>=600px)
+   et desktop (>=900px) via media queries en fin de fichier.
+   ==================================================================== */
+
+:root {
+  /* Palette */
+  --c-nuit: #1E0A2E;          /* primaire dominante */
+  --c-accent: #D4680A;        /* accent principal (CTA) */
+  --c-lavande: #6B2FA0;       /* primaire secondaire */
+  --c-turquoise: #2E8B7A;     /* accent secondaire */
+  --c-lin: #FAF5F0;           /* fond clair/neutre */
+  --c-fond-alt: #3D1259;      /* fond alternatif (sections sombres) */
+  --c-accent-clair: #E8924A;  /* clair de l'accent (hover) */
+  --c-texte-sombre: #C99DE0;  /* texte sur fond sombre */
+  --c-highlight: #5EC8B5;     /* highlight / CTA secondaire */
+  --c-texte: #2A2A2A;         /* texte principal sur fond clair */
+
+  --font-titre: 'Fraunces', serif;
+  --font-texte: 'Outfit', sans-serif;
+
+  --container-width: 1100px;
+  --radius: 8px;
+  --header-height: 72px;
+}
+
+/* ---------- Reset / base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
+body {
+  margin: 0;
+  font-family: var(--font-texte);
+  font-weight: 400;
+  color: var(--c-texte);
+  background: var(--c-lin);
+  line-height: 1.65;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+ul { padding-left: 0; list-style: none; margin: 0; }
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.6em;
+}
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+h3 { font-size: 1.15rem; margin-top: 1.5em; }
+
+.body-text { margin: 0 0 1em; max-width: 62ch; }
+.subtitle { font-size: 1.15rem; font-weight: 500; max-width: 55ch; margin: 0 0 1em; }
+.intro { font-weight: 500; margin-bottom: 1.2em; }
+.tagline {
+  font-family: var(--font-titre);
+  color: var(--c-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.5em;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--c-highlight);
+  margin: 0 0 0.8em;
+}
+
+/* ---------- Sections ---------- */
+.section { padding: 4.5rem 0; }
+.section-dark { background: var(--c-fond-alt); color: #fff; }
+.section-dark .body-text, .section-dark p { color: var(--c-texte-sombre); }
+.section-dark h2, .section-dark .tagline { color: #fff; }
+.section-alt { background: var(--c-lavande); color: #fff; }
+.section-alt .body-text { color: #fff; }
+.section-alt h2 { color: #fff; }
+
+.section-featured {
+  background: var(--c-nuit);
+  color: #fff;
+  padding: 5.5rem 0;
+  border-top: 4px solid var(--c-accent);
+  border-bottom: 4px solid var(--c-accent);
+}
+.section-featured h2, .section-featured .subtitle { color: #fff; }
+.section-featured .body-text { color: var(--c-texte-sombre); }
+.featured-body { max-width: 65ch; margin-bottom: 2rem; }
+
+/* ---------- CTA buttons ---------- */
+.cta {
+  display: inline-block;
+  font-family: var(--font-texte);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.cta:hover { transform: translateY(-2px); }
+.cta-primary { background: var(--c-accent); color: var(--c-nuit); }
+.cta-primary:hover { background: var(--c-accent-clair); }
+.cta-secondary { background: transparent; color: var(--c-accent); border: 2px solid var(--c-accent); }
+.cta-secondary:hover { background: var(--c-accent); color: var(--c-nuit); }
+.cta-highlight { background: var(--c-highlight); color: var(--c-nuit); }
+.cta-highlight:hover { background: #7fd6c5; }
+.cta-large { font-size: 1.1rem; padding: 18px 32px; }
+
+/* ---------- Header sticky ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: transparent;
+  transition: background-color 0.35s ease;
+}
+.site-header.scrolled {
+  background-color: var(--c-nuit);
+}
+.nav-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-link { display: block; position: relative; width: 160px; height: 40px; }
+.logo { position: absolute; top: 0; left: 0; width: 160px; height: 40px; object-fit: contain; transition: opacity 0.3s ease; }
+.logo-dark { opacity: 1; }
+.logo-light { opacity: 0; }
+.site-header.scrolled .logo-dark { opacity: 0; }
+.site-header.scrolled .logo-light { opacity: 1; }
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--c-texte);
+}
+.site-header.scrolled .nav-links a { color: #fff; }
+
+/* Burger (mobile only, shown via media query below) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.burger span { width: 24px; height: 2px; background: var(--c-texte); transition: background 0.3s ease; }
+.site-header.scrolled .burger span { background: #fff; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 3.5rem; }
+.hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+.hero-image-placeholder,
+.apropos-image-placeholder {
+  background: var(--c-lavande);
+  border-radius: 12px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ---------- Check list (section "Vous reconnaissez-vous") ---------- */
+.check-list { margin-bottom: 1.5rem; }
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 0.7em;
+  color: var(--c-texte-sombre);
+}
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c-highlight);
+}
+.transition-text { max-width: 60ch; margin-bottom: 1.5rem; color: var(--c-texte-sombre); }
+
+/* ---------- À propos ---------- */
+.apropos-grid { display: grid; gap: 2.5rem; align-items: center; }
+
+/* ---------- FAQ (accordéon natif <details>) ---------- */
+.faq-list { max-width: 75ch; }
+.faq-item {
+  border-bottom: 1px solid rgba(42,42,42,0.15);
+  padding: 1rem 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.05rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.chevron {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--c-accent);
+  border-bottom: 2px solid var(--c-accent);
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+.faq-item[open] .chevron { transform: rotate(-135deg); }
+.faq-answer {
+  padding-top: 0.8rem;
+  color: var(--c-texte);
+  animation: fadeIn 0.25s ease;
+}
+.faq-answer ul { list-style: disc; padding-left: 1.4em; }
+.faq-answer li { margin-bottom: 0.4em; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; gap: 2.5rem; }
+.contact-methods { margin-top: 1.5rem; }
+.contact-methods li { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7em; }
+.contact-methods a { text-decoration: none; color: var(--c-highlight); font-weight: 500; }
+
+.contact-form { display: flex; flex-direction: column; gap: 6px; background: rgba(255,255,255,0.05); padding: 1.8rem; border-radius: 12px; }
+.contact-form label { font-size: 0.85rem; font-weight: 500; margin-top: 0.6em; color: var(--c-texte-sombre); }
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-texte);
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.92);
+  color: var(--c-texte);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--c-highlight);
+  outline-offset: 1px;
+}
+.contact-form button { margin-top: 1rem; align-self: flex-start; }
+.form-error { color: #ffb4b4; font-size: 0.85rem; margin: 0.3em 0 0; }
+
+/* ---------- Footer / mentions légales ---------- */
+.site-footer { background: var(--c-nuit); color: var(--c-texte-sombre); }
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 20px;
+  font-size: 0.85rem;
+}
+.footer-top a { color: var(--c-texte-sombre); text-decoration: underline; }
+.mentions-legales {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 2.5rem 0 3.5rem;
+  font-size: 0.85rem;
+}
+.mentions-legales h2 { color: #fff; font-size: 1.3rem; }
+.mentions-legales h3 { color: #fff; font-size: 0.95rem; }
+.mentions-legales p { max-width: 70ch; }
+
+/* ---------- Fade-in au scroll ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .cta:hover { transform: none; }
+}
+
+/* ====================================================================
+   TABLETTE : 600px et plus
+   ==================================================================== */
+@media (min-width: 600px) {
+  .hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+  .apropos-grid { grid-template-columns: 0.9fr 1.1fr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+  .section { padding: 6rem 0; }
+}
+
+/* ====================================================================
+   DESKTOP : 900px et plus — menu horizontal, burger masqué
+   ==================================================================== */
+@media (max-width: 899px) {
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--c-nuit);
+    padding: 1.5rem 20px;
+    gap: 18px;
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-links a { color: #fff; font-size: 1.1rem; }
+  .burger { display: flex; }
+}
+
+@media (min-width: 900px) {
+  .section { padding: 7rem 0; }
+  .featured-body { max-width: 70ch; }
+}
