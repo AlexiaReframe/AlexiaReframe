@@ -17,10 +17,10 @@
   <!-- Favicon (placeholder, à générer depuis le logo) -->
   <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
 
-  <!-- Google Fonts : Fraunces (titres) + Outfit (texte courant) -->
+  <!-- Google Fonts : Cormorant Garamond (titres) + Figtree (texte courant) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -43,7 +43,7 @@
       <nav>
         <ul class="nav-links" id="main-nav">
           <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#reconnait">Vous reconnaissez-vous ?</a></li>
+          <li><a href="#reconnait">Pour qui ?</a></li>
           <li><a href="#accompagnement">Accompagnement</a></li>
           <li><a href="#apropos">À propos</a></li>
           <li><a href="#services">Services</a></li>
@@ -58,17 +58,19 @@
 
     <!-- ==================== 1. ACCUEIL ==================== -->
     <section id="accueil" class="section hero reveal">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="tagline">Shift Happens.</p>
-          <h1>Sortir du flou pour enfin vivre de l'activité qui te ressemble VRAIMENT</h1>
-          <p class="subtitle">Rigueur d'analyse, bienveillance sans jugement : je transforme ce que tu m'apportes en plan clair et concret pour vivre de ton activité de coach.</p>
-          <p class="body-text">Ingénieure et chercheuse de formation, j'analyse, je structure et je te renvoie ce que tu m'apportes de façon claire et digestible, sans jamais te juger. Le but : que ton activité de coach devienne enfin le métier qui te ressemble, aligné à tes talents et tes valeurs.</p>
-          <a href="mailto:hello@alexiareframe.com?subject=Appel%20d%C3%A9couverte" class="cta cta-primary">Une question ? Envie d'échanger ? Contacte-moi par email pour réserver ton appel découverte.</a>
-        </div>
-        <!-- Placeholder photo : portrait authentique d'Alexia, lumière naturelle, 1200x1400px, format WebP -->
-        <div class="hero-image-placeholder" role="img" aria-label="Photo à venir : portrait d'Alexia, lumière naturelle">
-          <span>Photo portrait<br>1200 × 1400 · WebP</span>
+      <div class="container">
+        <p class="tagline">Shift Happens.</p>
+        <h1 class="hero-title-full">Sortir du flou pour enfin vivre de l'activité qui te ressemble VRAIMENT</h1>
+        <div class="hero-grid">
+          <div class="hero-text">
+            <p class="subtitle">La rigueur de la science et bienveillance du coaching : je transforme ce que tu m'apportes en plan clair et concret pour vivre de ton activité de coach.</p>
+            <p class="body-text">Ingénieure et chercheuse universitaire de formation, j'analyse, je structure et je te renvoie ce que tu m'apportes de façon claire et digeste, en respectant tes valeurs et ton rythme. Le but : développer l'activité de coach qui te ressemble, aligné à tes talents et tes valeurs.</p>
+            <a href="mailto:hello@alexiareframe.com?subject=Appel%20d%C3%A9couverte" class="cta cta-primary">Une question ? Envie d'échanger ? Contacte-moi par email pour réserver ton appel découverte.</a>
+          </div>
+          <!-- Placeholder photo : portrait authentique d'Alexia, lumière naturelle, 1200x1400px, format WebP -->
+          <div class="hero-image-placeholder" role="img" aria-label="Photo à venir : portrait d'Alexia, lumière naturelle">
+            <span>Photo portrait<br>1200 × 1400 · WebP</span>
+          </div>
         </div>
       </div>
     </section>
@@ -76,8 +78,8 @@
     <!-- ==================== 2. VOUS RECONNAISSEZ-VOUS ? ==================== -->
     <section id="reconnait" class="section section-dark reveal">
       <div class="container">
-        <h2>Tu te reconnais ?</h2>
-        <p class="intro">Petit tour d'inventaire. Sans jugement, promis.</p>
+        <h2>Ça te parle ?</h2>
+        <p class="intro">Tu es au bon endroit si :</p>
         <ul class="check-list">
           <li>Tu doutes de ta légitimité, même quand les résultats sont là</li>
           <li>Tu ne sais pas trop par où commencer, ou par où continuer</li>
@@ -85,8 +87,11 @@
           <li>Tu donnes beaucoup, parfois trop, et tu as du mal à te faire payer à ta juste valeur</li>
           <li>Tu as l'impression d'être bloqué·e, sans vraiment savoir pourquoi</li>
         </ul>
-        <p class="transition-text">Bonne nouvelle : rien de tout ça n'est gravé dans le marbre. Être bloqué·e ne veut pas dire que tu n'es pas prêt·e ou capable, il te manque juste le bon déclic. Et ce déclic, c'est avant tout une question de clarté, ça se résout bien plus facilement que tu l'imagines peut-être.</p>
-        <a href="#accompagnement" class="cta cta-highlight">Rejoins l'accompagnement Reframe. Le déclic, c'est maintenant.</a>
+        <p class="transition-text">Bonne nouvelle : rien de tout ça n'est gravé dans le marbre. Être bloqué·e ne veut pas dire que tu n'es pas prêt·e ou capable, il te manque juste le bon déclic. Ce déclic, c'est avant tout une question de clarté, et ça se résout bien plus facilement que tu l'imagines peut-être.</p>
+        <div class="cta-block">
+          <p class="cta-label">Rejoins l'accompagnement Reframe</p>
+          <a href="#accompagnement" class="cta cta-orange">Le déclic, c'est maintenant.</a>
+        </div>
       </div>
     </section>
 
@@ -106,7 +111,10 @@
           <p class="body-text">Pas de format copié-collé figé, pas de nombre de séances imposé : je m'adapte à ton rythme et à tes ambitions.</p>
         </div>
 
-        <a href="mailto:hello@alexiareframe.com?subject=Appel%20d%C3%A9couverte%20-%20Accompagnement%20Reframe" class="cta cta-primary cta-large">Écris-moi pour réserver ton appel découverte (30 min, gratuit)</a>
+        <a href="mailto:hello@alexiareframe.com?subject=Appel%20d%C3%A9couverte%20-%20Accompagnement%20Reframe" class="cta cta-primary cta-large cta-stacked">
+          <span class="cta-main">Réserve ton appel découverte</span>
+          <span class="cta-sub">(30 min, gratuit)</span>
+        </a>
       </div>
     </section>
 
@@ -119,7 +127,7 @@
           <p class="body-text">Ce que la recherche scientifique apprend, en vrai, ce n'est pas la théorie. C'est à regarder un même sujet sous plusieurs angles jusqu'à ce qu'il devienne clair. Un peu comme recadrer une photo : le sujet ne change pas, mais soudain, on voit enfin ce qui compte.</p>
           <p class="body-text">En parallèle, le développement personnel me travaillait depuis plus de dix ans, presque comme une deuxième thèse, informelle celle-là. Aujourd'hui, coach professionnelle formée selon les standards de l'ICF, je fais converger les deux : un regard scientifique, structuré, sans concession sur la clarté, et une approche profondément humaine, sans jugement, avec (beaucoup) de bonne humeur.</p>
           <p class="body-text">Reframe, c'est cette conviction-là appliquée à ton activité : le sujet ne change pas forcément, mais la façon dont tu le regardes, si. Une fois qu'on voit clair, le reste suit.</p>
-          <a href="#accompagnement" class="cta cta-secondary">Découvre l'accompagnement Reframe ↓</a>
+          <a href="#accompagnement" class="cta cta-secondary">Découvre <span class="nowrap">l'accompagnement Reframe</span></a>
         </div>
         <!-- Placeholder photo : parcours international (labo, terrain, Japon/Canada), lumière naturelle, 1000x1200px, format WebP -->
         <div class="apropos-image-placeholder" role="img" aria-label="Photo à venir : parcours international d'Alexia">
@@ -162,7 +170,7 @@
           <details class="faq-item">
             <summary>Comment se déroule la prise de contact ?<span class="chevron" aria-hidden="true"></span></summary>
             <div class="faq-answer">
-              <p>Tu peux me contacter par email (<a href="mailto:hello@alexiareframe.com">hello@alexiareframe.com</a>), par téléphone ou WhatsApp au <a href="tel:+32498678819">+32 (0)498 67 88 19</a>. Le premier échange, de 30 minutes, est gratuit et sans engagement. Je réponds sous 24h.</p>
+              <p>Tu peux me contacter par email (<a href="mailto:hello@alexiareframe.com">hello@alexiareframe.com</a>), par téléphone ou SMS au <a href="tel:+32498678819">+32 (0)498 67 88 19</a>, ou par WhatsApp au <a href="https://wa.me/33610274577" target="_blank" rel="noopener">+33 (0)6 10 27 45 77</a>. Le premier échange, de 30 minutes, est gratuit et sans engagement. Je réponds sous 24h.</p>
             </div>
           </details>
 
@@ -201,8 +209,8 @@
           <p class="subtitle">Une question, une envie d'échanger ? Écris-moi, appelle-moi, ou passe par WhatsApp. Le premier échange (30 minutes) est gratuit et sans engagement. Je réponds sous 24h.</p>
           <ul class="contact-methods">
             <li><i aria-hidden="true">✉</i> <a href="mailto:hello@alexiareframe.com">hello@alexiareframe.com</a></li>
-            <li><i aria-hidden="true">☎</i> <a href="tel:+32498678819">+32 (0)498 67 88 19</a></li>
-            <li><i aria-hidden="true">↗</i> <a href="https://wa.me/32498678819" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><i aria-hidden="true">☎</i> <a href="tel:+32498678819">+32 (0)498 67 88 19</a> <span class="contact-note">(appels et SMS)</span></li>
+            <li><i aria-hidden="true">↗</i> <a href="https://wa.me/33610274577" target="_blank" rel="noopener">WhatsApp : +33 (0)6 10 27 45 77</a></li>
           </ul>
         </div>
 
@@ -230,26 +238,8 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <p>&copy; 2026 Alexia Reframe. Tous droits réservés.</p>
-      <a href="#mentions-legales">Mentions légales</a>
+      <a href="mentions-legales.html">Mentions légales</a>
     </div>
-
-    <section id="mentions-legales" class="mentions-legales">
-      <div class="container">
-        <h2>Mentions légales</h2>
-
-        <h3>Éditeur du site</h3>
-        <p>Le présent site est édité par Alexia Nectoux, exerçant sous le nom commercial Alexia Reframe, [Statut juridique à compléter, ex. indépendante en personne physique], immatriculée sous le numéro d'entreprise [Numéro BCE à compléter], dont le siège est situé [Adresse à compléter]. Contact : hello@alexiareframe.com.</p>
-
-        <h3>Hébergement</h3>
-        <p>Ce site est hébergé par [Nom de l'hébergeur, ex. GitHub Inc.], [Adresse de l'hébergeur à compléter].</p>
-
-        <h3>Propriété intellectuelle</h3>
-        <p>L'ensemble des contenus présents sur ce site (textes, images, logo, identité visuelle) est la propriété exclusive d'Alexia Reframe, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable est interdite.</p>
-
-        <h3>Données personnelles</h3>
-        <p>Les informations transmises via le formulaire de contact sont utilisées uniquement pour répondre à ta demande et ne sont communiquées à aucun tiers. Conformément au Règlement Général sur la Protection des Données (RGPD), tu disposes d'un droit d'accès, de rectification et de suppression de tes données, à exercer en écrivant à hello@alexiareframe.com. [Compléter si nécessaire : durée de conservation, coordonnées d'un DPO.]</p>
-      </div>
-    </section>
   </footer>
 
   <script src="script.js"></script>
