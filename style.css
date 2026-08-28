@@ -18,7 +18,7 @@
   --c-highlight: #5EC8B5;     /* highlight / CTA secondaire */
   --c-texte: #2A2A2A;         /* texte principal sur fond clair */
 
-  --font-titre: 'Cormorant Garamond', serif;
+  --font-titre: 'DM Serif Text', serif;
   --font-texte: 'Figtree', sans-serif;
 
   --container-width: 1100px;
@@ -49,7 +49,7 @@ ul { padding-left: 0; list-style: none; margin: 0; }
 
 h1, h2, h3 {
   font-family: var(--font-titre);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.15;
   margin: 0 0 0.6em;
 }
@@ -63,7 +63,7 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
 .tagline {
   font-family: var(--font-titre);
   color: var(--c-accent);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.1rem;
   margin: 0 0 0.5em;
 }
@@ -118,9 +118,9 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
 .cta-highlight:hover { background: #7fd6c5; }
 .cta-large { font-size: 1.1rem; padding: 18px 32px; }
 
-/* Bouton "Le déclic, c'est maintenant" : libellé au-dessus, bouton orange clair, centré */
-.cta-block { text-align: center; margin-top: 1.5rem; }
-.cta-label { font-weight: 600; margin: 0 0 0.7em; }
+/* Bouton "Le déclic, c'est maintenant" : libellé au-dessus, bouton orange clair, centré dans la colonne de texte */
+.cta-block { max-width: 60ch; text-align: center; margin-top: 1.5rem; }
+.cta-label { font-weight: 400; margin: 0 0 0.7em; }
 .cta-orange { background: var(--c-accent-clair); color: var(--c-nuit); }
 .cta-orange:hover { background: var(--c-accent); }
 
@@ -155,8 +155,8 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
 }
 .logo-link { display: block; position: relative; width: 160px; height: 40px; }
 .logo { position: absolute; top: 0; left: 0; width: 160px; height: 40px; object-fit: contain; transition: opacity 0.3s ease; }
-.logo-dark { opacity: 1; }
-.logo-light { opacity: 0; }
+.logo-dark { opacity: 0; }
+.logo-light { opacity: 1; }
 .site-header.scrolled .logo-dark { opacity: 0; }
 .site-header.scrolled .logo-light { opacity: 1; }
 
@@ -168,7 +168,7 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--c-texte);
+  color: #fff;
 }
 .site-header.scrolled .nav-links a { color: #fff; }
 
@@ -183,11 +183,19 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
   cursor: pointer;
   padding: 8px;
 }
-.burger span { width: 24px; height: 2px; background: var(--c-texte); transition: background 0.3s ease; }
+.burger span { width: 24px; height: 2px; background: #fff; transition: background 0.3s ease; }
 .site-header.scrolled .burger span { background: #fff; }
 
 /* ---------- Hero ---------- */
-.hero { padding-top: 3.5rem; }
+.hero {
+  padding-top: 3.5rem;
+  background-image: linear-gradient(rgba(30, 10, 46, 0.68), rgba(30, 10, 46, 0.68)), url('assets/images/hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero h1 { color: #fff; }
+.hero .subtitle, .hero .body-text { color: var(--c-texte-sombre); }
 .hero-title-full { max-width: none; margin-bottom: 1.2rem; }
 .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
 .hero-image-placeholder,
