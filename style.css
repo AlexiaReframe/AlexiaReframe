@@ -212,6 +212,11 @@ h3 { font-size: 1.15rem; margin-top: 1.5em; }
   font-size: 0.85rem;
   opacity: 0.85;
 }
+.hero-portrait {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
 
 /* ---------- Check list (section "Vous reconnaissez-vous") ---------- */
 .check-list { margin-bottom: 1.5rem; }
